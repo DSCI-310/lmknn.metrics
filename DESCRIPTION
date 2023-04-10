@@ -25,3 +25,4 @@ Collate:
     '02_create-recipe.R'
     '03_create-spec-kmin.R'
     '04_get-list-item.R'
+    '05_create-fit.R'
