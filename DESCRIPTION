@@ -16,7 +16,8 @@ Imports:
   workflows,
   tune,
   tibble,
-  rsample
+  rsample,
+  yardstick
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
@@ -27,3 +28,4 @@ Collate:
     '04_get-list-item.R'
     '05_create-fit.R'
     '06_create-model-prediction.R'
+    '07_get-metric.R'
