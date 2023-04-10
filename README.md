@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of lmkknn.metrics is to …
+The goal of lmkknn.metrics is to help build and record metrics of lm and kknn regression models!
 
 ## Installation
 
