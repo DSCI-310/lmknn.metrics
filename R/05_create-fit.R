@@ -41,15 +41,15 @@
 #'
 create_fit <- function(model_recipe, model_spec, df){
 
-  if (class(model_recipe) != "recipe") {
+  if (!(inherits(model_recipe, "recipe"))) {
     stop("model_recipe must be of class recipe!")
   }
 
-  if (sum(class(model_spec) %in% c("linear_reg", "nearest_neighbor", "model_spec")) != 2){
+  if (!(inherits(model_spec, c("linear_reg", "nearest_neighbor", "model_spec")))){
     stop("model_spec has to be either linear reg or nearest_neighbor method!")
   }
 
-  if (class(df) != "data.frame"){
+  if (!(inherits(df, "data.frame"))){
     stop("df must be a dataframe!")
   }
 

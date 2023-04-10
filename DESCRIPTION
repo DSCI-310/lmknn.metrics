@@ -26,3 +26,4 @@ Collate:
     '03_create-spec-kmin.R'
     '04_get-list-item.R'
     '05_create-fit.R'
+    '06_create-model-prediction.R'
