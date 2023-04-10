@@ -17,7 +17,8 @@ Imports:
   tune,
   tibble,
   rsample,
-  yardstick
+  yardstick,
+  data.table
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
@@ -31,3 +32,4 @@ Collate:
     '07_get-metric.R'
     '08_str-collapse.R'
     '09_create-metric-df.R'
+    '10_metric-bind.R'

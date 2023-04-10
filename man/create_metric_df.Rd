@@ -28,15 +28,9 @@ create_metric_df(
 \item{target_variable}{A character string specifying the name of the target variable in the data frames}
 
 \item{predictors_vector}{A character vector specifying the names of the predictor variables in the data frames}
-
-\item{x}{a variable to be checked}
-
-\item{cls}{a character vector specifying the expected class(es)}
 }
 \value{
 A data frame containing the specified performance metric, the predictor variables, the prediction model method, and the value of kmin i"f applicable"
-
-invisible NULL if all variables are of the expected class
 }
 \description{
 This function takes as input two data frames: train_df and test_df that contain the training and test data for a prediction model, respectively. It also takes a character string specifying the performance metric to calculate "metric", a character string specifying the prediction model to use "method", an integer specifying the minimum number of neighbors to consider when using the "kknn" method "kmin", a character string specifying the name of the target variable in the data frames target_variable, and a character vector specifying the names of the predictor variables in the data frames "predictors_vector". The function returns a data frame containing the specified performance metric, the predictor variables, the prediction model method, and the value of kmin "if applicable".
@@ -48,7 +42,7 @@ If the kmin argument is not specified it is set to "NA".
 The function assumes that the target variable and predictor variables have already been identified in the data
 }
 \examples{
-#' # Load data
+# Load data
 data(mtcars)
 
 # Example 1: Using single variable regression with lm method
@@ -58,6 +52,4 @@ create_metric_df(train_df, test_df, metric = "rmse", method = "lm", target_varia
 
 # Example 2: Using k-nearest neighbor method with optimal k
 create_metric_df(train_df, test_df, metric = "mae", method = "kknn", kmin = 3, target_variable = "gear", predictors_vector = c("am", "vs"))
-Check if all variables are of correct class
-
 }
