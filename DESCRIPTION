@@ -29,3 +29,5 @@ Collate:
     '05_create-fit.R'
     '06_create-model-prediction.R'
     '07_get-metric.R'
+    '08_str-collapse.R'
+    '09_create-metric-df.R'

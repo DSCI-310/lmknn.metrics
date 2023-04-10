@@ -28,10 +28,10 @@ test_that("create_spec_kmin returns a list with model specification and kmin val
 
 # Test case 3: Test that the function raises an error when an invalid method is specified
 test_that("create_spec_kmin raises an error when an invalid method is specified", {
-  expect_error(lmkknn.metrics::create_spec_kmin(train_df, model_recipe, method="invalid_method", metric="rmse", target_variable="gear"))
+  expect_error(lmkknn.metrics::create_spec_kmin(train_df, model_recipe, method="invalid_method", metric="rmse", target_variable="gear"), "Invalid method specified")
 })
 
 # Test case 4: Test that the function raises an error when kmin is not numeric.
 test_that("create_spec_kmin raises an error when kmin is not numeric", {
-  expect_error(lmkknn.metrics::create_spec_kmin(train_df, model_recipe, method="kknn", metric="rmse", kmin="invalid_kmin", target_variable="gear"))
+  expect_error(lmkknn.metrics::create_spec_kmin(train_df, model_recipe, method="kknn", metric="rmse", kmin="invalid_kmin", target_variable="gear"), "invalid kmin specified")
 })
