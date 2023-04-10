@@ -26,6 +26,4 @@ This is a basic example which shows you how to solve a common problem:
 library(lmkknn.metrics)
 ## basic example code
 ```
-## Usage
-
 
