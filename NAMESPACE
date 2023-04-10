@@ -2,6 +2,7 @@
 
 export(create_recipe)
 export(create_spec_kmin)
+export(get_list_item)
 export(target_df)
 import(dplyr)
 importFrom(parsnip,linear_reg)
