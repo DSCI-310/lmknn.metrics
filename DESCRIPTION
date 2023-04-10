@@ -11,10 +11,16 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports:
   dplyr,
-  recipes
+  recipes,
+  parsnip,
+  workflows,
+  tune,
+  tibble,
+  rsample
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Collate: 
     '01_target-df.R'
     '02_create-recipe.R'
+    '03_create-spec-kmin.R'
