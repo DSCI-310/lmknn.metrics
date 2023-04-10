@@ -26,7 +26,7 @@
 #' @include 08_str-collapse.R
 #'
 #' @examples
-#' #' # Load data
+#' # Load data
 #' data(mtcars)
 #'
 #' # Example 1: Using single variable regression with lm method
@@ -39,12 +39,7 @@
 
 create_metric_df <- function(train_df, test_df, metric, method, kmin="NA", target_variable, predictors_vector){
 
-  #' Check if all variables are of correct class
-  #'
-  #' @param x a variable to be checked
-  #' @param cls a character vector specifying the expected class(es)
-  #'
-  #' @return invisible NULL if all variables are of the expected class
+  # Check if all variables are of correct class
   check_class <- function(x, cls) {
     if (!all(sapply(x, function(y) class(y) %in% cls))) {
       stop(paste("At least one", cls, "is of the wrong class."))
