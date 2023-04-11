@@ -3,9 +3,9 @@ Title: LM and KKNN regression metrics
 Version: 0.0.0.9000
 Authors@R: 
     c(
-    person("Ammar", "Bagharib", , "ammarbagharib@gmail.com", role = c("aut", "cre")),
-    person("Miles", "Brodie", , "miles.j.brodie@gmail.com"),
-    person("Sammy", "Gulip", , "syamnadhg@hotmail.com")
+    person("Ammar", "Bagharib", ,"ammarbagharib@gmail.com", role = c("aut", "cre")),
+    person("Miles", "Brodie", ,"miles.j.brodie@gmail.com", role = c("aut")),
+    person("Sammy", "Gulip", ,"syamnadhg@hotmail.com", role = c("aut"))
     )
 Description: Contains functions that builds and records metrics of lm and kknn regression models.
 License: MIT + file LICENSE

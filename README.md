@@ -8,7 +8,8 @@
 [![R-CMD-check](https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/R-CMD-check.yaml/badge.svg)
 [![codecov](https://codecov.io/gh/DSCI-310/dsci-310-group-16-pkg/branch/master/graph/badge.svg?token=qCuceyp6lY)](https://codecov.io/gh/DSCI-310/dsci-310-group-16-pkg/branch/master/graph/badge.svg?token=qCuceyp6lY)
 [![test-coverage](https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/test-coverage.yaml/badge.svg)
-git <!-- badges: end -->
+
+<!-- badges: end -->
 
 The goal of lmkknn.metrics is to build and record metrics derived from
 linear and KKNN regression prediction models.
@@ -20,8 +21,60 @@ with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("DSCI-310/dsci-310-group-16-pkg.")
+devtools::install_github("DSCI-310/dsci-310-group-16-pkg")
 ```
+
+## Functions:
+
+The package provides the following functions:
+
+`target_df()`: Selects the target variable and additional columns from a
+dataframe.
+
+`create_recipe()`: Creates a recipe object for modeling based on the
+specified target variable and predictors.
+
+`create_spec_kmin()`: This function creates a model specification for
+either linear regression or k-nearest neighbor regression, with an
+optional kmin tuning for the latter. If kmin is not specified, the
+function performs a grid search to find the optimal k value that gives
+the minimum root mean squared error (RMSE) on a 5-fold cross-validation
+of the training data.
+
+`get_list_item()`: Retrieves the nth element of a given list.
+
+`create_fit()`: Creates a fitted model using a model recipe based on
+predictors and target variable, model specification, and dataframe.
+
+`create_model_prediction()`: Creates a prediction model using a trained
+model fit and a test dataset.
+
+`get_metric()`: Extracts a specified metric from a prediction model.
+
+`str_collapse()`: Collapses a string of arguments and joins them by ‘+’.
+
+`create_metric_df()`: This function takes as input two data frames:
+train_df and test_df that contain the training and test data for a
+prediction model, respectively. It also takes a character string
+specifying the performance metric to calculate “metric”, a character
+string specifying the prediction model to use “method”, an integer
+specifying the minimum number of neighbors to consider when using the
+“kknn” method “kmin”, a character string specifying the name of the
+target variable in the data frames target_variable, and a character
+vector specifying the names of the predictor variables in the data
+frames “predictors_vector”. The function returns a data frame containing
+the specified performance metric, the predictor variables, the
+prediction model method, and the value of kmin “if applicable”.
+
+`metric_bind()`: This function binds together data frames created from
+the `create_metric_df()` function using the `rbindlist()` function from
+the `data.table` package. The data frames are created by fitting linear
+models to the training data using the predictor variables provided in
+`model_list`, and then calculating the specified metric on the test
+data.
+
+For more information on how to use each function, see the [package
+documentation](https://dsci-310.github.io/dsci-310-group-16-pkg/reference/index.html).
 
 ## Example Use Cases:
 
@@ -86,58 +139,6 @@ model fit and a test dataset.
     str_collapse(c("my name", "is", "jake"))
     str_collapse(c("my name", "is", 2))
     str_collapse(c(3, 2, "boy"))
-
-## Functions:
-
-The package provides the following functions:
-
-`target_df()`: Selects the target variable and additional columns from a
-dataframe.
-
-`create_recipe()`: Creates a recipe object for modeling based on the
-specified target variable and predictors.
-
-`create_spec_kmin()`: This function creates a model specification for
-either linear regression or k-nearest neighbor regression, with an
-optional kmin tuning for the latter. If kmin is not specified, the
-function performs a grid search to find the optimal k value that gives
-the minimum root mean squared error (RMSE) on a 5-fold cross-validation
-of the training data.
-
-`get_list_item()`: Retrieves the nth element of a given list.
-
-`create_fit()`: Creates a fitted model using a model recipe based on
-predictors and target variable, model specification, and dataframe.
-
-`create_model_prediction()`: Creates a prediction model using a trained
-model fit and a test dataset.
-
-`get_metric()`: Extracts a specified metric from a prediction model.
-
-`str_collapse()`: Collapses a string of arguments and joins them by ‘+’.
-
-`create_metric_df()`: This function takes as input two data frames:
-train_df and test_df that contain the training and test data for a
-prediction model, respectively. It also takes a character string
-specifying the performance metric to calculate “metric”, a character
-string specifying the prediction model to use “method”, an integer
-specifying the minimum number of neighbors to consider when using the
-“kknn” method “kmin”, a character string specifying the name of the
-target variable in the data frames target_variable, and a character
-vector specifying the names of the predictor variables in the data
-frames “predictors_vector”. The function returns a data frame containing
-the specified performance metric, the predictor variables, the
-prediction model method, and the value of kmin “if applicable”.
-
-`metric_bind()`: This function binds together data frames created from
-the `create_metric_df()` function using the `rbindlist()` function from
-the `data.table` package. The data frames are created by fitting linear
-models to the training data using the predictor variables provided in
-`model_list`, and then calculating the specified metric on the test
-data.
-
-For more information on how to use each function, see the package
-documentation.
 
 ## Contributing
 
