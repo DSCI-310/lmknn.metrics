@@ -114,12 +114,16 @@ str_collapse(c(3, 2, "boy"))
 
 ## Functions:
 
-target_df()
-create_recipe()
-get_list_item()
-create_model_prediction()
-str_collapse()
+The package provides the following functions:
+
+target_df(): Selects the target variable and additional columns from a dataframe.
+create_recipe(): Creates a recipe object for modeling based on the specified target variable and predictors.
+get_list_item(): Retrieves the nth element of a given list.
+create_model_prediction(): Creates a prediction model using a trained model fit and a test dataset.
+str_collapse(): Collapses a string of arguments and joins them by '+'.
+
 For more information on how to use each function, see the package documentation.
+
 
 ## Contributing
 We appreciate contributions to the lmkknn.metrics package. Please refer to our Contributing document and Code of Conduct for more information.
