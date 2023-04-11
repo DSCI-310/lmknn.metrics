@@ -20,16 +20,7 @@ devtools::install_github("DSCI-310/dsci-310-group-16-pkg.")
 
 ## Example Use Cases:
 
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(lmkknn.metrics)
-## basic example code
-```
-
-## Here are some examples of use cases for the functions provided in lmkknn.metrics:
-
-target_df: Selecting the target variable and additional columns from a
+`target_df`: Selecting the target variable and additional columns from a
 dataframe.
 
     library(lmkknn.metrics)
@@ -40,7 +31,7 @@ dataframe.
     # Selecting the target variable and additional columns
     target_df(mtcars, "mpg", cyl, disp)
 
-create_recipe: Creating a recipe object for modeling based on the
+`create_recipe`: Creating a recipe object for modeling based on the
 specified target variable and predictors.
 
     # Load data
@@ -52,7 +43,7 @@ specified target variable and predictors.
     # Create recipe object for modeling
     recipe <- create_recipe(target_df, "gear")
 
-get_list_item: Retrieving the nth element of a given list.
+`get_list_item`: Retrieving the nth element of a given list.
 
     # Create a list
     my_list <- list(a = 1, b = 2, c = 3)
@@ -60,7 +51,7 @@ get_list_item: Retrieving the nth element of a given list.
     # Retrieve second element from list
     get_list_item(my_list, 2)
 
-create_model_prediction: Creating a prediction model using a trained
+`create_model_prediction`: Creating a prediction model using a trained
 model fit and a test dataset.
 
     # Load data
@@ -83,7 +74,8 @@ model fit and a test dataset.
     # Generate predictions for testing data
     create_model_prediction(test_df, x_fit )
 
-str_collapse: Collapsing a string of arguments and joining them by ‘+’.
+`str_collapse`: Collapsing a string of arguments and joining them by
+‘+’.
 
     str_collapse("my name")
     str_collapse(c("my name", "is", "jake"))
@@ -94,12 +86,18 @@ str_collapse: Collapsing a string of arguments and joining them by ‘+’.
 
 The package provides the following functions:
 
-target_df(): Selects the target variable and additional columns from a
-dataframe. create_recipe(): Creates a recipe object for modeling based
-on the specified target variable and predictors. get_list_item():
-Retrieves the nth element of a given list. create_model_prediction():
-Creates a prediction model using a trained model fit and a test dataset.
-str_collapse(): Collapses a string of arguments and joins them by ‘+’.
+`target_df()`: Selects the target variable and additional columns from a
+dataframe.
+
+`create_recipe()`: Creates a recipe object for modeling based on the
+specified target variable and predictors.
+
+`get_list_item()`: Retrieves the nth element of a given list.
+
+`create_model_prediction()`: Creates a prediction model using a trained
+model fit and a test dataset.
+
+`str_collapse()`: Collapses a string of arguments and joins them by ‘+’.
 
 For more information on how to use each function, see the package
 documentation.
@@ -113,14 +111,3 @@ to our Contributing document and Code of Conduct for more information.
 
 The software provided in this project is offered under the MIT open
 source license. Refer to the license file for more information.
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
