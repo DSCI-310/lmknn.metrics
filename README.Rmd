@@ -14,6 +14,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+[![codecov](https://codecov.io/gh/DSCI-310/dsci-310-group-16-pkg/branch/master/graph/badge.svg?token=qCuceyp6lY)](https://codecov.io/gh/DSCI-310/dsci-310-group-16-pkg)
+
 # lmkknn.metrics
 
 <!-- badges: start -->
