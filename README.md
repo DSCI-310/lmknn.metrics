@@ -4,14 +4,17 @@
 # lmkknn.metrics
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/R-CMD-check.yaml)
+[![codecov](https://codecov.io/gh/DSCI-310/dsci-310-group-16-pkg/branch/main/graph/badge.svg?token=5xOKOnaBIl)](https://codecov.io/gh/DSCI-310/dsci-310-group-6-pkg)
 <!-- badges: end -->
 
 The goal of lmkknn.metrics is to …
 
 ## Installation
 
-You can install the development version of lmkknn.metrics from
-[GitHub](https://github.com/) with:
+You can install the development version of lmkknn.metrics from GitHub
+with:
 
 ``` r
 # install.packages("devtools")
@@ -125,10 +128,11 @@ the specified performance metric, the predictor variables, the
 prediction model method, and the value of kmin “if applicable”.
 
 `metric_bind()`: This function binds together data frames created from
-the function using the function from the package. The data frames are
-created by fitting linear models to the training data using the
-predictor variables provided in , and then calculating the specified
-metric on the test data.
+the `create_metric_df()` function using the `rbindlist()` function from
+the `data.table` package. The data frames are created by fitting linear
+models to the training data using the predictor variables provided in
+`model_list`, and then calculating the specified metric on the test
+data.
 
 For more information on how to use each function, see the package
 documentation.
@@ -136,9 +140,15 @@ documentation.
 ## Contributing
 
 We appreciate contributions to the lmkknn.metrics package. Please refer
-to our Contributing document and Code of Conduct for more information.
+to our
+[Contributing](https://github.com/DSCI-310/dsci-310-group-16-pkg/blob/master/CONTRIBUTING.md)
+document and [Code of
+Conduct](https://github.com/DSCI-310/dsci-310-group-16-pkg/blob/master/CODE_OF_CONDUCT.md)
+for more information.
 
 ## License
 
 The software provided in this project is offered under the MIT open
-source license. Refer to the license file for more information.
+source license. Refer to the
+[license](https://github.com/DSCI-310/dsci-310-group-16-pkg/blob/master/LICENSE.md)
+file for more information.

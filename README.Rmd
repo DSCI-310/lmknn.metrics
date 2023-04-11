@@ -4,6 +4,7 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -16,13 +17,15 @@ knitr::opts_chunk$set(
 # lmkknn.metrics
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/R-CMD-check.yaml)
+[![codecov](https://codecov.io/gh/DSCI-310/dsci-310-group-16-pkg/branch/main/graph/badge.svg?token=5xOKOnaBIl)](https://codecov.io/gh/DSCI-310/dsci-310-group-6-pkg)
 <!-- badges: end -->
 
 The goal of lmkknn.metrics is to ...
 
 ## Installation
 
-You can install the development version of lmkknn.metrics from [GitHub](https://github.com/) with:
+You can install the development version of lmkknn.metrics from GitHub with:
 
 ``` r
 # install.packages("devtools")
@@ -119,13 +122,13 @@ The package provides the following functions:
 
 `create_metric_df()`: This function takes as input two data frames: train_df and test_df that contain the training and test data for a prediction model, respectively. It also takes a character string specifying the performance metric to calculate "metric", a character string specifying the prediction model to use "method", an integer specifying the minimum number of neighbors to consider when using the "kknn" method "kmin", a character string specifying the name of the target variable in the data frames target_variable, and a character vector specifying the names of the predictor variables in the data frames "predictors_vector". The function returns a data frame containing the specified performance metric, the predictor variables, the prediction model method, and the value of kmin "if applicable".
 
-`metric_bind()`: This function binds together data frames created from the \code{create_metric_df()} function using the \code{rbindlist()} function from the \code{data.table} package. The data frames are created by fitting linear models to the training data using the predictor variables provided in \code{model_list}, and then calculating the specified metric on the test data.
+`metric_bind()`: This function binds together data frames created from the `create_metric_df()` function using the `rbindlist()` function from the `data.table` package. The data frames are created by fitting linear models to the training data using the predictor variables provided in `model_list`, and then calculating the specified metric on the test data.
 
 For more information on how to use each function, see the package documentation.
 
 
 ## Contributing
-We appreciate contributions to the lmkknn.metrics package. Please refer to our Contributing document and Code of Conduct for more information.
+We appreciate contributions to the lmkknn.metrics package. Please refer to our [Contributing](https://github.com/DSCI-310/dsci-310-group-16-pkg/blob/master/CONTRIBUTING.md) document and [Code of Conduct](https://github.com/DSCI-310/dsci-310-group-16-pkg/blob/master/CODE_OF_CONDUCT.md) for more information.
 
 ## License
-The software provided in this project is offered under the MIT open source license. Refer to the license file for more information.
+The software provided in this project is offered under the MIT open source license. Refer to the [license](https://github.com/DSCI-310/dsci-310-group-16-pkg/blob/master/LICENSE.md) file for more information.
