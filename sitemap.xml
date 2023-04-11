@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/404.html</loc>
   </url>
   <url>
-    <loc>/CODE_OF_CONDUCT.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>/CONTRIBUTING.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/CONTRIBUTING.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/index.html</loc>
   </url>
   <url>
-    <loc>/reference/create_fit.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/reference/create_fit.html</loc>
   </url>
   <url>
-    <loc>/reference/create_metric_df.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/reference/create_metric_df.html</loc>
   </url>
   <url>
-    <loc>/reference/create_model_prediction.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/reference/create_model_prediction.html</loc>
   </url>
   <url>
-    <loc>/reference/create_recipe.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/reference/create_recipe.html</loc>
   </url>
   <url>
-    <loc>/reference/create_spec_kmin.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/reference/create_spec_kmin.html</loc>
   </url>
   <url>
-    <loc>/reference/get_list_item.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/reference/get_list_item.html</loc>
   </url>
   <url>
-    <loc>/reference/get_metric.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/reference/get_metric.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/metric_bind.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/reference/metric_bind.html</loc>
   </url>
   <url>
-    <loc>/reference/str_collapse.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/reference/str_collapse.html</loc>
   </url>
   <url>
-    <loc>/reference/target_df.html</loc>
+    <loc>https://dsci-310.github.io/dsci-310-group-16-pkg/reference/target_df.html</loc>
   </url>
 </urlset>
