@@ -66,6 +66,22 @@
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"DSCI-310/dsci-310-group-16-pkg"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
+<h2 id="functions">Functions:<a class="anchor" aria-label="anchor" href="#functions"></a>
+</h2>
+<p>The package provides the following functions:</p>
+<p><code><a href="reference/target_df.html">target_df()</a></code>: Selects the target variable and additional columns from a dataframe.</p>
+<p><code><a href="reference/create_recipe.html">create_recipe()</a></code>: Creates a recipe object for modeling based on the specified target variable and predictors.</p>
+<p><code><a href="reference/create_spec_kmin.html">create_spec_kmin()</a></code>: This function creates a model specification for either linear regression or k-nearest neighbor regression, with an optional kmin tuning for the latter. If kmin is not specified, the function performs a grid search to find the optimal k value that gives the minimum root mean squared error (RMSE) on a 5-fold cross-validation of the training data.</p>
+<p><code><a href="reference/get_list_item.html">get_list_item()</a></code>: Retrieves the nth element of a given list.</p>
+<p><code><a href="reference/create_fit.html">create_fit()</a></code>: Creates a fitted model using a model recipe based on predictors and target variable, model specification, and dataframe.</p>
+<p><code><a href="reference/create_model_prediction.html">create_model_prediction()</a></code>: Creates a prediction model using a trained model fit and a test dataset.</p>
+<p><code><a href="reference/get_metric.html">get_metric()</a></code>: Extracts a specified metric from a prediction model.</p>
+<p><code><a href="reference/str_collapse.html">str_collapse()</a></code>: Collapses a string of arguments and joins them by ‘+’.</p>
+<p><code><a href="reference/create_metric_df.html">create_metric_df()</a></code>: This function takes as input two data frames: train_df and test_df that contain the training and test data for a prediction model, respectively. It also takes a character string specifying the performance metric to calculate “metric”, a character string specifying the prediction model to use “method”, an integer specifying the minimum number of neighbors to consider when using the “kknn” method “kmin”, a character string specifying the name of the target variable in the data frames target_variable, and a character vector specifying the names of the predictor variables in the data frames “predictors_vector”. The function returns a data frame containing the specified performance metric, the predictor variables, the prediction model method, and the value of kmin “if applicable”.</p>
+<p><code><a href="reference/metric_bind.html">metric_bind()</a></code>: This function binds together data frames created from the <code><a href="reference/create_metric_df.html">create_metric_df()</a></code> function using the <code>rbindlist()</code> function from the <code>data.table</code> package. The data frames are created by fitting linear models to the training data using the predictor variables provided in <code>model_list</code>, and then calculating the specified metric on the test data.</p>
+<p>For more information on how to use each function, see the <a href="https://dsci-310.github.io/dsci-310-group-16-pkg/reference/index.html">package documentation</a>.</p>
+</div>
+<div class="section level2">
 <h2 id="example-use-cases">Example Use Cases:<a class="anchor" aria-label="anchor" href="#example-use-cases"></a>
 </h2>
 <p><code>target_df</code>: Selecting the target variable and additional columns from a dataframe.</p>
@@ -116,22 +132,6 @@
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_collapse</span>(<span class="fu">c</span>(<span class="st">"my name"</span>, <span class="st">"is"</span>, <span class="st">"jake"</span>))</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str_collapse</span>(<span class="fu">c</span>(<span class="st">"my name"</span>, <span class="st">"is"</span>, <span class="dv">2</span>))</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str_collapse</span>(<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>, <span class="st">"boy"</span>))</span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="functions">Functions:<a class="anchor" aria-label="anchor" href="#functions"></a>
-</h2>
-<p>The package provides the following functions:</p>
-<p><code><a href="reference/target_df.html">target_df()</a></code>: Selects the target variable and additional columns from a dataframe.</p>
-<p><code><a href="reference/create_recipe.html">create_recipe()</a></code>: Creates a recipe object for modeling based on the specified target variable and predictors.</p>
-<p><code><a href="reference/create_spec_kmin.html">create_spec_kmin()</a></code>: This function creates a model specification for either linear regression or k-nearest neighbor regression, with an optional kmin tuning for the latter. If kmin is not specified, the function performs a grid search to find the optimal k value that gives the minimum root mean squared error (RMSE) on a 5-fold cross-validation of the training data.</p>
-<p><code><a href="reference/get_list_item.html">get_list_item()</a></code>: Retrieves the nth element of a given list.</p>
-<p><code><a href="reference/create_fit.html">create_fit()</a></code>: Creates a fitted model using a model recipe based on predictors and target variable, model specification, and dataframe.</p>
-<p><code><a href="reference/create_model_prediction.html">create_model_prediction()</a></code>: Creates a prediction model using a trained model fit and a test dataset.</p>
-<p><code><a href="reference/get_metric.html">get_metric()</a></code>: Extracts a specified metric from a prediction model.</p>
-<p><code><a href="reference/str_collapse.html">str_collapse()</a></code>: Collapses a string of arguments and joins them by ‘+’.</p>
-<p><code><a href="reference/create_metric_df.html">create_metric_df()</a></code>: This function takes as input two data frames: train_df and test_df that contain the training and test data for a prediction model, respectively. It also takes a character string specifying the performance metric to calculate “metric”, a character string specifying the prediction model to use “method”, an integer specifying the minimum number of neighbors to consider when using the “kknn” method “kmin”, a character string specifying the name of the target variable in the data frames target_variable, and a character vector specifying the names of the predictor variables in the data frames “predictors_vector”. The function returns a data frame containing the specified performance metric, the predictor variables, the prediction model method, and the value of kmin “if applicable”.</p>
-<p><code><a href="reference/metric_bind.html">metric_bind()</a></code>: This function binds together data frames created from the <code><a href="reference/create_metric_df.html">create_metric_df()</a></code> function using the <code>rbindlist()</code> function from the <code>data.table</code> package. The data frames are created by fitting linear models to the training data using the predictor variables provided in <code>model_list</code>, and then calculating the specified metric on the test data.</p>
-<p>For more information on how to use each function, see the package documentation.</p>
 </div>
 <div class="section level2">
 <h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
