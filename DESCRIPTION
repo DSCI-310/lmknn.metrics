@@ -2,8 +2,11 @@ Package: lmkknn.metrics
 Title: LM and KKNN regression metrics
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    c(
+    person("Ammar", "Bagharib", , "ammarbagharib@gmail.com", role = c("aut", "cre")),
+    person("Miles", "Brodie", , "miles.j.brodie@gmail.com", role = c("aut", "cre")),
+    person("Sammy", "Gulip", , "syamnadhg@hotmail.com", role = c("aut", "cre"))
+    )
 Description: Contains functions that builds and records metrics of lm and kknn regression models.
 License: MIT + file LICENSE
 Encoding: UTF-8

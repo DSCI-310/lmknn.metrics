@@ -50,8 +50,100 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9">
-Contains functions that builds and records metrics of lm and kknn regression models.
+  <main id="main" class="col-md-9"><div class="section level1">
+<div class="page-header"><h1 id="lmkknnmetrics">lmkknn.metrics<a class="anchor" aria-label="anchor" href="#lmkknnmetrics"></a>
+</h1></div>
+<!-- badges: start -->
+
+<!-- badges: end -->
+<p>The goal of lmkknn.metrics is to …</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install the development version of lmkknn.metrics from GitHub with:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"DSCI-310/dsci-310-group-16-pkg."</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="example-use-cases">Example Use Cases:<a class="anchor" aria-label="anchor" href="#example-use-cases"></a>
+</h2>
+<p><code>target_df</code>: Selecting the target variable and additional columns from a dataframe.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(lmkknn.metrics)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># Selecting only the target variable</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="fu">target_df</span>(mtcars, <span class="st">"mpg"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co"># Selecting the target variable and additional columns</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="fu">target_df</span>(mtcars, <span class="st">"mpg"</span>, cyl, disp)</span></code></pre></div>
+<p><code>create_recipe</code>: Creating a recipe object for modeling based on the specified target variable and predictors.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Load data</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"mtcars"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># Select target variable and predictors</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>target_df <span class="ot">&lt;-</span> <span class="fu">target_df</span>(mtcars, <span class="st">"gear"</span>, mpg, cyl, disp)</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co"># Create recipe object for modeling</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>recipe <span class="ot">&lt;-</span> <span class="fu">create_recipe</span>(target_df, <span class="st">"gear"</span>)</span></code></pre></div>
+<p><code>get_list_item</code>: Retrieving the nth element of a given list.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Create a list</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>, <span class="at">c =</span> <span class="dv">3</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># Retrieve second element from list</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="fu">get_list_item</span>(my_list, <span class="dv">2</span>)</span></code></pre></div>
+<p><code>create_model_prediction</code>: Creating a prediction model using a trained model fit and a test dataset.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Load data</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"mtcars"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co"># Split data into training and testing datasets</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>train_df <span class="ot">&lt;-</span> <span class="fu">target_df</span>(mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>, ], <span class="st">'gear'</span>, <span class="fu">c</span>(<span class="st">"am"</span>, <span class="st">"vs"</span>))</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>test_df <span class="ot">&lt;-</span> <span class="fu">target_df</span>(mtcars[<span class="dv">17</span><span class="sc">:</span><span class="dv">32</span>, ], <span class="st">'gear'</span>, <span class="fu">c</span>(<span class="st">"am"</span>, <span class="st">"vs"</span>))</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co"># Create recipe object for modeling</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>x_recipe <span class="ot">&lt;-</span> <span class="fu">create_recipe</span>(train_df, <span class="at">target_variable=</span><span class="st">"gear"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co"># Create specification for k-nn model</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>x_spec_list <span class="ot">&lt;-</span> <span class="fu">create_spec_kmin</span>(train_df, <span class="at">model_recipe=</span>x_recipe, <span class="at">method=</span><span class="st">"lm"</span>, <span class="at">target_variable=</span><span class="st">"gear"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>x_spec <span class="ot">&lt;-</span> <span class="fu">get_list_item</span>(x_spec_list, <span class="at">n=</span><span class="dv">1</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co"># Fit the model to training data</span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>x_fit <span class="ot">&lt;-</span> <span class="fu">create_fit</span>(x_recipe, x_spec, train_df)</span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co"># Generate predictions for testing data</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="fu">create_model_prediction</span>(test_df, x_fit )</span></code></pre></div>
+<p><code>str_collapse</code>: Collapsing a string of arguments and joining them by ‘+’.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">str_collapse</span>(<span class="st">"my name"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">str_collapse</span>(<span class="fu">c</span>(<span class="st">"my name"</span>, <span class="st">"is"</span>, <span class="st">"jake"</span>))</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">str_collapse</span>(<span class="fu">c</span>(<span class="st">"my name"</span>, <span class="st">"is"</span>, <span class="dv">2</span>))</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="fu">str_collapse</span>(<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>, <span class="st">"boy"</span>))</span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="functions">Functions:<a class="anchor" aria-label="anchor" href="#functions"></a>
+</h2>
+<p>The package provides the following functions:</p>
+<p><code><a href="reference/target_df.html">target_df()</a></code>: Selects the target variable and additional columns from a dataframe.</p>
+<p><code><a href="reference/create_recipe.html">create_recipe()</a></code>: Creates a recipe object for modeling based on the specified target variable and predictors.</p>
+<p><code><a href="reference/create_spec_kmin.html">create_spec_kmin()</a></code>: This function creates a model specification for either linear regression or k-nearest neighbor regression, with an optional kmin tuning for the latter. If kmin is not specified, the function performs a grid search to find the optimal k value that gives the minimum root mean squared error (RMSE) on a 5-fold cross-validation of the training data.</p>
+<p><code><a href="reference/get_list_item.html">get_list_item()</a></code>: Retrieves the nth element of a given list.</p>
+<p><code><a href="reference/create_fit.html">create_fit()</a></code>: Creates a fitted model using a model recipe based on predictors and target variable, model specification, and dataframe.</p>
+<p><code><a href="reference/create_model_prediction.html">create_model_prediction()</a></code>: Creates a prediction model using a trained model fit and a test dataset.</p>
+<p><code><a href="reference/get_metric.html">get_metric()</a></code>: Extracts a specified metric from a prediction model.</p>
+<p><code><a href="reference/str_collapse.html">str_collapse()</a></code>: Collapses a string of arguments and joins them by ‘+’.</p>
+<p><code><a href="reference/create_metric_df.html">create_metric_df()</a></code>: This function takes as input two data frames: train_df and test_df that contain the training and test data for a prediction model, respectively. It also takes a character string specifying the performance metric to calculate “metric”, a character string specifying the prediction model to use “method”, an integer specifying the minimum number of neighbors to consider when using the “kknn” method “kmin”, a character string specifying the name of the target variable in the data frames target_variable, and a character vector specifying the names of the predictor variables in the data frames “predictors_vector”. The function returns a data frame containing the specified performance metric, the predictor variables, the prediction model method, and the value of kmin “if applicable”.</p>
+<p><code><a href="reference/metric_bind.html">metric_bind()</a></code>: This function binds together data frames created from the <code><a href="reference/create_metric_df.html">create_metric_df()</a></code> function using the <code>rbindlist()</code> function from the <code>data.table</code> package. The data frames are created by fitting linear models to the training data using the predictor variables provided in <code>model_list</code>, and then calculating the specified metric on the test data.</p>
+<p>For more information on how to use each function, see the package documentation.</p>
+</div>
+<div class="section level2">
+<h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
+</h2>
+<p>We appreciate contributions to the lmkknn.metrics package. Please refer to our <a href="https://github.com/DSCI-310/dsci-310-group-16-pkg/blob/master/CONTRIBUTING.md" class="external-link">Contributing</a> document and <a href="https://github.com/DSCI-310/dsci-310-group-16-pkg/blob/master/CODE_OF_CONDUCT.md" class="external-link">Code of Conduct</a> for more information.</p>
+</div>
+<div class="section level2">
+<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
+</h2>
+<p>The software provided in this project is offered under the MIT open source license. Refer to the <a href="https://github.com/DSCI-310/dsci-310-group-16-pkg/blob/master/LICENSE.md" class="external-link">license</a> file for more information.</p>
+</div>
+</div>
   </main><aside class="col-md-3"><div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
@@ -60,6 +152,13 @@ Contains functions that builds and records metrics of lm and kknn regression mod
 </ul>
 </div>
 
+<div class="community">
+<h2 data-toc-skip>Community</h2>
+<ul class="list-unstyled">
+<li><a href="CONTRIBUTING.html">Contributing guide</a></li>
+<li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+</ul>
+</div>
 
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
@@ -71,11 +170,20 @@ Contains functions that builds and records metrics of lm and kknn regression mod
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>First Last <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Ammar Bagharib <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Miles Brodie <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Sammy Gulip <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/R-CMD-check.yaml/badge.svg" class="external-link"><img src="https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://codecov.io/gh/DSCI-310/dsci-310-group-16-pkg/branch/master/graph/badge.svg?token=qCuceyp6lY" class="external-link"><img src="https://codecov.io/gh/DSCI-310/dsci-310-group-16-pkg/branch/master/graph/badge.svg?token=qCuceyp6lY" alt="codecov"></a></li>
+<li><a href="https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/test-coverage.yaml/badge.svg" class="external-link"><img src="https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/test-coverage.yaml/badge.svg" alt="test-coverage"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>
@@ -83,7 +191,7 @@ Contains functions that builds and records metrics of lm and kknn regression mod
 
     <footer><div class="pkgdown-footer-left">
   <p></p>
-<p>Developed by First Last.</p>
+<p>Developed by Ammar Bagharib, Miles Brodie, Sammy Gulip.</p>
 </div>
 
 <div class="pkgdown-footer-right">
