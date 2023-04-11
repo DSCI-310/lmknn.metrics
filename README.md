@@ -5,8 +5,8 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/R-CMD-check.yaml)
-[![codecov](https://codecov.io/gh/DSCI-310/dsci-310-group-16-pkg/branch/main/graph/badge.svg?token=5xOKOnaBIl)](https://codecov.io/gh/DSCI-310/dsci-310-group-6-pkg)
+[![codecov](https://codecov.io/gh/DSCI-310/dsci-310-group-16-pkg/branch/master/graph/badge.svg?token=qCuceyp6lY)](https://codecov.io/gh/DSCI-310/dsci-310-group-16-pkg/branch/master/graph/badge.svg?token=qCuceyp6lY)
+[~\[test-coverage\](https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/DSCI-310/dsci-310-group-16-pkg/actions/workflows/test-coverage.yaml/badge.svg)
 <!-- badges: end -->
 
 The goal of lmkknn.metrics is to …
