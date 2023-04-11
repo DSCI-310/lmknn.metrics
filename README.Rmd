@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
-The goal of lmkknn.metrics is to ...
+The goal of lmkknn.metrics is to build and record metrics derived from linear and KKNN regression prediction models.
 
 ## Installation
 
