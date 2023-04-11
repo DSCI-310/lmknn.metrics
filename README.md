@@ -15,7 +15,7 @@ You can install the development version of lmkknn.metrics from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("DSCI-310/dsci-310-group-16-pkg.")
+devtools::install_github("DSCI-310/dsci-310-group-16-pkg")
 ```
 
 ## Usage
